@@ -36,62 +36,6 @@ Organism detection plays a vital role in marine resource exploitation and the ma
     </em>
 </p>
 
-### 2.4. Qualitative Results
-
-\begin{table*}[!t]
-\caption{Comparison with SOTA models on MAS3K, CHAMELEON, and COD10K datasets. The best top three results are highlighted in \textcolor{red}{red}, \textcolor{blue}{blue}, and \textcolor{green}{green}, respectively. All methods are trained/tested on the same images as ours.  We evaluate the metric with structural similarity ($S_{\alpha}$ \cite{39}),  weighted F-measure ($F_{\beta}^{\omega}$ \cite{40}), 
-mean absolute error ($M$ \cite{38}), and mean E-measure (m$E_{\varphi}$ \cite{109}).
-$\uparrow$ means higher scores are better, while $\downarrow$ means lower scores are better. The * represents medical image segmentation.}
-\vspace{-3mm}
-\label{tab:Comparison}
-\centering
-\renewcommand\arraystretch{1.2}
-\resizebox{\textwidth}{!}
-{$
-\begin{tabular}{cc|cccc|cccc|cccc}
-\toprule
- \multirow{2}{*}{Models} &   \multirow{2}{*}{Publication}     & \multicolumn{4}{c|}{MAS3K \cite{56} }                                                                                               & \multicolumn{4}{c|}{CHAMELEON \cite{23}  }                                                  & \multicolumn{4}{c}{COD10K \cite{13}}                                                                                          \\
-\cline{3-14}
- &  & $\mathrm{S} \alpha \uparrow$                          & $F_{\beta}^{\omega}\uparrow$                             & $M\downarrow$                         & $mE_{\varphi}\uparrow$                         & $\mathrm{S} \alpha \uparrow$                          & $F_{\beta}^{\omega}\uparrow$                             & $M\downarrow$                         & $mE_{\varphi}\uparrow$                         & $\mathrm{S} \alpha \uparrow$                          & $F_{\beta}^{\omega}\uparrow$                             & $M\downarrow$                         & $mE_{\varphi}\uparrow$                         \\
-\midrule
-\multicolumn{14}{c}{Methods Initially Designed for Salient Object Detection / Medical Image Segmentation} \\
-\midrule
-CPD \cite{46}     & 2019 CVPR            & 0.869                        & 0.776                        & 0.032                        & 0.897                        & 0.870                        & 0.758                        & 0.034                        & 0.886                        & 0.774                        & 0.588                        & 0.041                        & 0.801                        \\
-\midrule
-SCRN \cite{47}     &2019 ICCV         & 0.870                        & 0.750                        & 0.033                        & 0.890                        & 0.865                        & 0.722                        & 0.043                        & 0.871                        & 0.789                        & 0.572                        & 0.046                        & 0.801                        \\
-\midrule
-F3Net \cite{48}      &2020 AAAI        & 0.872                        & 0.801                        & 0.028                        & 0.927                        & 0.868                        & 0.764                        & 0.038                        & 0.917                        & 0.805                        & 0.650                        & 0.039                        & 0.872                        \\
-\midrule
-PraNet* \cite{49}   &2020 MICCAI        & 0.883                        & 0.817                        & 0.026                        & 0.929                        & 0.873                        & 0.785                        & 0.034                        & 0.922                        & 0.812                        & 0.671                        & 0.036                        & 0.877                        \\
-\midrule
-PolyP-Pvt* \cite{50}    &2021 TMI        & 0.889                        & 0.840                        & 0.027                        & 0.934                        & 0.881                        & 0.830                        & 0.026                        & 0.943                        & 0.814                        & 0.705                        & 0.035                        & 0.887                        \\
-\midrule
-PFNet \cite{mei2021camouflaged}      &2021 CVPR        & 0.882                        & 0.818                        & 0.026                        & 0.927                        & 0.840                        & 0.814                        & 0.028                        & 0.942                        & 0.798                        & 0.643                        & 0.037                        & 0.865                        \\
-\midrule
-PFSNet \cite{51}     &2021 AAAI         & 0.880                        & 0.816                        & 0.027                        & 0.929                        & 0.866                        & 0.781                        & 0.033                        & 0.924                        & 0.806                        & 0.669                        & 0.038                        & 0.876                        \\
-\midrule
-PSGLoss \cite{52}     &2021 TIP         & 0.848                        & 0.779                        & 0.031                        & 0.883                        & 0.828                        & 0.753                        & 0.031                        & 0.872                        & 0.732                        & 0.566                        & 0.040                        & 0.732                        \\
-\midrule
-\multicolumn{14}{c}{Methods Initially Designed for Camouflaged Object Detection}       \\
-\midrule
-SINet-v1 \cite{13}    &2020 CVPR      & 0.870                        & 0.766                        & 0.031                        & 0.902                        & 0.867                        & 0.741                        & 0.039                        & 0.891                        & 0.789                        & 0.595                        & 0.042                        & 0.819                        \\
-\midrule
-SINet-v2 \cite{53}   &2021 PAMI        & 0.894                        & 0.843                        & {\textcolor{blue}{0.021}} & 0.942                        & {\textcolor{blue}{0.897}} & 0.828                        & {\textcolor{green}{0.026}} & {\textcolor{blue}{0.950}} & {\textcolor{green}{0.829}}                        & 0.707                        &{\textcolor{green}{0.032}}                        & {\textcolor{blue}{0.899}} \\
-\midrule
-C2FNet-v1 \cite{14}  &2021 IJCAI      & {\textcolor{green}{0.897}} & {\textcolor{green}{0.850}} & {\textcolor{blue}{0.021}} & {\textcolor{blue}{0.943}} & {\textcolor{blue}{0.897}} & {\textcolor{blue}{0.840}} & {\textcolor{blue}{0.025}} & {\textcolor{green}{0.944}} & {\textcolor{blue}{0.830}} & {\textcolor{green}{0.714}} & 0.030                        & {\textcolor{red}{0.902}} \\
-\midrule
-RankNet \cite{54}    &2021 CVPR        & 0.858                        & 0.764                        & 0.034                        & 0.909                        & 0.838                        & 0.707                        & 0.048                        & 0.884                        & 0.782                        & 0.599                        & 0.049                        & 0.841                        \\
-\midrule
-BSANet \cite{26}    &2022 AAAI        & {\textcolor{blue}{0.900}} & {\textcolor{blue}{0.856}} & {\textcolor{blue}{0.021}} & {\textcolor{blue}{0.943}} & 0.888                        & 0.830                        & 0.027                        & 0.941                        & {\textcolor{red}{0.833}} & {\textcolor{blue}{0.722}} & \textcolor{blue}{0.028}                        & 0.897                        \\
-\midrule
- C2FNet-v2 \cite{55}     &2022 TCSVT       & 0.898                        & 0.852                        & 0.022                        & 0.939                        & 0.891                        & {\textcolor{green}{0.839}} & 0.026 & 0.942                        & 0.827                        & 0.715                        & 0.031                        & 0.896                        \\
-\midrule
- ECDNet \cite{56}     &2022 TCSVT      & 0.850                        & 0.766                        & 0.036                        & 0.901                        & 0.843                        & 0.749                        & 0.038                        & 0.893                        & 0.683                        & 0.446                        & 0.049                        & 0.781                        \\
-\midrule
-BCMNet             & Ours                   & {\textcolor{red}{0.906}} & {\textcolor{red}{0.865}} & {\textcolor{red}{0.019}} & {\textcolor{red}{0.945}} & {\textcolor{red}{0.900}} & {\textcolor{red}{0.863}} & {\textcolor{red}{0.022}} & {\textcolor{red}{0.954}} & {\textcolor{green}{0.829}} & {\textcolor{red}{0.723}} & {\textcolor{red}{0.027}} & {\textcolor{blue}{0.899}}                        \\
-\bottomrule
-\end{tabular}$}
-\end{table*}
 ## 3. Proposed Baseline
 
 ### 3.1. Training/Testing
