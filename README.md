@@ -52,14 +52,14 @@ double 2080Ti GPU of 48 GB Memory.
 1. Downloading necessary data:
 
     + downloading training/testing dataset and move it into `./data/`, 
-    which can be found in this [(Google Drive)](https://drive.google.com/file/d/1c0ToIqKMgaDyMT4YnS61toE0evAcnfck/view?usp=sharing) or [(BaiduNetdisk)](link：https://pan.baidu.com/s/1O-dqlpUX0V94kDSPt3Uu8Q?pwd=BCMN) 
+    which can be found in this [(Google Drive)](https://drive.google.com/file/d/1c0ToIqKMgaDyMT4YnS61toE0evAcnfck/view?usp=sharing) or [(BaiduNetdisk)](https://pan.baidu.com/s/1O-dqlpUX0V94kDSPt3Uu8Q?pwd=BCMN) 
 (Extracted code：BCMN).
     
     + downloading pretrained weights and move it into `./checkpoints/BCMNet.pth`, 
-    which can be found in this [(Google Drive)](https://drive.google.com/file/d/1KZ53pNHXJXJma2vHHpFF7X5bwQcWK0kf/view?usp=sharing) or [(BaiduNetdisk)](link：https://pan.baidu.com/s/1eOg9acG6CrXWSzi9fuuKRA?pwd=BCMN) 
+    which can be found in this [(Google Drive)](https://drive.google.com/file/d/1KZ53pNHXJXJma2vHHpFF7X5bwQcWK0kf/view?usp=sharing) or [(BaiduNetdisk)](https://pan.baidu.com/s/1eOg9acG6CrXWSzi9fuuKRA?pwd=BCMN) 
 (Extracted code：BCMN).
     
-    + downloading ResNet weights and move it into `./models/res2net50_v1b_26w_4s-3cf99910.pth`[(Google Drive)](https://drive.google.com/file/d/1ITW3_ZBBv2JTviskxO9zfiqlaQ9Nlj-J/view?usp=sharing) or [(BaiduNetdisk)](link：https://pan.baidu.com/s/11KWZfuCU15GC6tUxUxX4Nw?pwd=BCMN) 
+    + downloading ResNet weights and move it into `./models/res2net50_v1b_26w_4s-3cf99910.pth`[(Google Drive)](https://drive.google.com/file/d/1ITW3_ZBBv2JTviskxO9zfiqlaQ9Nlj-J/view?usp=sharing) or [(BaiduNetdisk)](https://pan.baidu.com/s/11KWZfuCU15GC6tUxUxX4Nw?pwd=BCMN) 
 (Extracted code：BCMN).
 
 1. Training Configuration:
