@@ -19,7 +19,8 @@ Organism detection plays a vital role in marine resource exploitation and the ma
 ### 2.2. Framework Overview
 
 <p align="center">
-    ![Alt Text]([url](https://github.com/chasecjg/BCMNet/blob/main/Images/BCMNet.pdf))
+    <img src="https://github.com/chasecjg/BCMNet/blob/main/Images/BCMNet.pdf" alt="Alt Text">
+    
     <em> 
     Figure 1: The overall architecture of the proposed model, which consists of two key components, i.e., attention-induced cross-level fusion module and dual-branch global context module. See § 3 in the paper for details.
     </em>
@@ -28,7 +29,8 @@ Organism detection plays a vital role in marine resource exploitation and the ma
 ### 2.3. Qualitative Results
 
 <p align="center">
-    ![Alt Text]([url](https://github.com/chasecjg/BCMNet/blob/main/Images/Compare_Results.pdf))
+    <img src="https://github.com/chasecjg/BCMNet/blob/main/Images/Compare_Results.pdf">
+ 
     <em> 
     Figure 2: Qualitative Results.
     </em>
