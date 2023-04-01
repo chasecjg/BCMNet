@@ -32,7 +32,7 @@ Organism detection plays a vital role in marine resource exploitation and the ma
     <img src="https://github.com/chasecjg/BCMNet/blob/main/Images/Compare_Results.png">
     <br>
     <em> 
-    "Figure 2: Qualitative Results."
+    Figure 2: Qualitative Results.
     </em>
 </p>
 
