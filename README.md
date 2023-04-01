@@ -22,14 +22,15 @@ Organism detection plays a vital role in marine resource exploitation and the ma
     <img src="https://github.com/chasecjg/BCMNet/blob/main/Images/BCMNet.png" alt="Alt Text">
     
     <em> 
-    Figure 1: Architecture Overview. Our BCMNet consists of a dual-branch encoder (Sec. III-B), feature fusion module AFF (Sec. III-C), an initial decoder based
+    "Figure 1: Architecture Overview. Our BCMNet consists of a dual-branch encoder (Sec. III-B), feature fusion module AFF (Sec. III-C), an initial decoder based
 on SAM (Sec. III-D), and a refiner based on DEM (Sec. III-E). During feature extraction, each encoder has its specific purposes, i.e., the texture encoder
 analyzes local details based on colour information, while the context encoder leverages the long-range dependencies for contextualized awareness. To fuse the
 encoded features, we propose an AFF module to aggregate features from different paradigms and scales. Then we introduce the SAM to partially decode the
-feature and generate the initial prediction based on the object’s external shape. Finally, the partial mask is further refined by enhancing the awareness of local
-fine-grained details through DEM. The initial and final predictions are both supervised by the ground truth mask, making our network end-to-end trainable.
+feature and generate the initial prediction based on the object's external shape. Finally, the partial mask is further refined by enhancing the awareness of local
+fine-grained details through DEM. The initial and final predictions are both supervised by the ground truth mask, making our network end-to-end trainable."
     </em>
 </p>
+
 
 ### 2.3. Qualitative Results
 
@@ -37,7 +38,7 @@ fine-grained details through DEM. The initial and final predictions are both sup
     <img src="https://github.com/chasecjg/BCMNet/blob/main/Images/Compare_Results.png">
  
     <em> 
-    Figure 2: Qualitative Results.
+    "Figure 2: Qualitative Results."
     </em>
 </p>
 
