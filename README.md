@@ -1,20 +1,20 @@
-# C2FNet: Context-aware Cross-level Fusion Network for Camouflaged Object Detection (IJCAI 2021)
+# Bidirectional Collaborative Mentoring Network for Marine Organism Detection and Beyond
 
 > **Authors:** 
-> Yujia Sun,
-> Geng Chen,
-> Tao Zhou,
-> Yi Zhang,
-> and Nian Liu.
+> Jinguang Cheng,
+> Zongwei Wu,
+> Shuo Wang,
+> Cédric Demonceaux,
+> and Qiuping Jiang.
 
 ## 1. Preface
 
-- This repository provides code for "_**Context-aware Cross-level Fusion Network for Camouflaged Object Detection**_" IJCAI-2021. [![Arxiv Page](https://img.shields.io/badge/Arxiv-2105.12555-red?style=flat-square)](https://arxiv.org/abs/2105.12555)
+- This repository provides code for "_**Bidirectional Collaborative Mentoring Network for Marine Organism Detection and Beyond**_" TCSVT-2023.
 
 ## 2. Overview
 
 ### 2.1. Introduction
-Camouflaged object detection (COD) is a challenging task due to the low boundary contrast between the object and its surroundings. In addition, the appearance of camouflaged objects varies significantly, e.g., object size and shape, aggravating the difficulties of accurate COD. In this paper, we propose a novel Context-aware Cross-level Fusion Network (C2FNet) to address the challenging COD task.Specifically, we propose an Attention-induced Cross-level Fusion Module (ACFM) to integrate the multi-level features with informative attention coefficients. The fused features are then fed to the proposed Dual-branch Global Context Module (DGCM), which yields multi-scale feature representations for exploiting rich global context information. In C2FNet, the two modules are conducted on high-level features using a cascaded manner. Extensive experiments on three widely used benchmark datasets demonstrate that our C2FNet is an effective COD model and outperforms state-of-the-art models remarkably. 
+Organism detection plays a vital role in marine resource exploitation and the marine economy. How to accurately locate the target object within the camouflaged and dark light oceanic scene has recently drawn great attention in the research community. Existing learning-based works usually leverage local texture details within a neighboring area, with few methods explicitly exploring the usage of contextualized awareness for accurate object detection. From a novel perspective, we present a Bidirectional Collaborative Mentoring Network (BCMNet) which fully explores both texture and context clues during the encoding and decoding stages, making the cross-paradigm interaction bidirectional and improving the scene understanding at all stages. Specifically, we first extract texture and context features through a dual branch encoder and attentively fuse them through our adjacent feature fusion (AFF) block. Then, we propose a structure-aware module (SAM) and a detailenhanced module (DEM) to form our two-stage decoding pipeline. On the one hand, our SAM leverages both local and global clues to preserve morphological integrity and generate an initial prediction of the target object. On the other hand, the DEM explicitly explores long-range dependencies to refine the initially predicted object mask further. The combination of SAM and DEM enables better extracting, preserving, and enhancing the object morphology, making it easier to segment the target object from the camouflaged background with sharp contour. Extensive experiments on three benchmark datasets show that our proposed BCMNet performs favorably over state-of-the-art models.
 
 ### 2.2. Framework Overview
 
@@ -39,26 +39,23 @@ Camouflaged object detection (COD) is a challenging task due to the low boundary
 ### 3.1. Training/Testing
 
 The training and testing experiments are conducted using [PyTorch](https://github.com/pytorch/pytorch) with 
-a single NVIDIA Tesla P40 GPU of 24 GB Memory.
+double 2080Ti GPU of 48 GB Memory.
 
 1. Configuring your environment (Prerequisites):
     
-    + Creating a virtual environment in terminal: `conda create -n C2FNet python=3.6`.
+    + Creating a virtual environment in terminal: `conda create -n C2FNet python=3.8`.
     
     + Installing necessary packages: `pip install -r requirements.txt`.
 
 1. Downloading necessary data:
 
-    + downloading testing dataset and move it into `./data/TestDataset/`, 
-    which can be found in this [download link (Google Drive)](https://drive.google.com/file/d/1QEGnP9O7HbN_2tH999O3HRIsErIVYalx/view?usp=sharing).
+    + downloading training/testing dataset and move it into `./data/`, 
+    which can be found in this [download link (Google Drive)](https://drive.google.com/file/d/1c0ToIqKMgaDyMT4YnS61toE0evAcnfck/view?usp=sharing).
     
-    + downloading training dataset and move it into `./data/TrainDataset/`, 
-    which can be found in this [download link (Google Drive)](https://drive.google.com/file/d/1Kifp7I0n9dlWKXXNIbN7kgyokoRY4Yz7/view?usp=sharing).
+    + downloading pretrained weights and move it into `./checkpoints/BCMNet.pth`, 
+    which can be found in this [download link (Google Drive)](https://drive.google.com/file/d/1KZ53pNHXJXJma2vHHpFF7X5bwQcWK0kf/view?usp=sharing).
     
-    + downloading pretrained weights and move it into `./checkpoints/C2FNet40/C2FNet-39.pth`, 
-    which can be found in this [download link (Google Drive)](https://drive.google.com/file/d/1zG7FjmYwpSagjXG3yhLUA5sjlvEvQvJl/view?usp=sharing).
-    
-    + downloading Res2Net weights and move it into `./models/res2net50_v1b_26w_4s-3cf99910.pth`[download link (Google Drive)](https://drive.google.com/file/d/1_1N-cx1UpRQo7Ybsjno1PAg4KE1T9e5J/view?usp=sharing).
+    + downloading ResNet weights and move it into `./models/res2net50_v1b_26w_4s-3cf99910.pth`[download link (Google Drive)](https://drive.google.com/file/d/1ITW3_ZBBv2JTviskxO9zfiqlaQ9Nlj-J/view?usp=sharing).
 
 1. Training Configuration:
 
@@ -72,8 +69,7 @@ a single NVIDIA Tesla P40 GPU of 24 GB Memory.
 
 ### 3.2 Evaluating your trained model:
 
-One-key evaluation is written in MATLAB code (revised from [link](https://github.com/DengPingFan/CODToolbox)), 
-please follow this the instructions in `./eval/main.m` and just run it to generate the evaluation results in.
+One-key evaluation is written in python code (revised from [link](https://github.com/lartpang/PySODMetrics)), 
 
 If you want to speed up the evaluation on GPU, you just need to use the efficient tool [link](https://github.com/lartpang/PySODMetrics) by `pip install pysodmetrics`.
 
@@ -81,18 +77,9 @@ Assigning your costumed path, like `method`, `mask_root` and `pred_root` in `eva
 
 Just run `eval.py` to evaluate the trained model.
 
-> pre-computed map can be found in [download link](https://drive.google.com/file/d/1l_qaEOWNaZVyEu7rk9K_C9Pcuicay0uk/view?usp=sharing).
 
 
 ## 4. Citation
 
-Please cite our paper if you find the work useful: 
-
-	@inproceedings{sun2021c2fnet,
-	title={Context-aware Cross-level Fusion Network for Camouflaged Object Detection},
-	author={Sun, Yujia and Chen, Geng and Zhou, Tao and Zhang, Yi and Liu, Nian},
-	booktitle={IJCAI},
-	year={2021}
-	}
 
 **[⬆ back to top](#1-preface)**
