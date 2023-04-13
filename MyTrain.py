@@ -30,7 +30,7 @@ def structure_loss(pred, mask):
 def train(train_loader, model, optimizer, epoch):
     model.train()
     # ---- multi-scale training ----
-    size_rates = [0.75, 1, 1.25]  # 多尺度训练，此处默认用1
+    size_rates = [0.75, 1, 1.25]  # multi scale，default：1
     loss_P1_record = AvgMeter()
     loss_P2_record = AvgMeter()
 
@@ -124,10 +124,10 @@ if __name__ == '__main__':
         model.load_state_dict(checkpoint['model'])
         optimizer.load_state_dict(checkpoint['optimizer'])
         start_epoch = checkpoint['opech']
-        print('加载 epoch {} 成功！'.format(start_epoch + 1))
+        print('loading epoch {} success！'.format(start_epoch + 1))
     else:
         start_epoch = 0
-        print('无保存模型，将从头开始训练！')
+        print('No modle, training from first epoch！')
 
     image_root = '{}/Imgs/'.format(opt.train_path)
     gt_root = '{}/GT/'.format(opt.train_path)
