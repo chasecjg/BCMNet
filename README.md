@@ -74,14 +74,7 @@ double 2080Ti GPU of 48 GB Memory.
 
 ### 3.2 Evaluating your trained model:
 
-One-key evaluation is written in python code (revised from [link](https://github.com/lartpang/PySODMetrics)), 
-
-If you want to speed up the evaluation on GPU, you just need to use the efficient tool [link](https://github.com/lartpang/PySODMetrics) by `pip install pysodmetrics`.
-
-Assigning your costumed path, like `method`, `mask_root` and `pred_root` in `eval.py`.
-
-Just run `eval.py` to evaluate the trained model.
-
+One-key evaluation is written in python code (revised from [link](https://github.com/lartpang/PySODMetrics))
 
 
 ## 4. Citation
