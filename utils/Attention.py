@@ -11,7 +11,7 @@ except ImportError:
 import torch
 
 
-# 具体流程可以参考图1，通道注意力机制
+# channel attention_v1
 class Channel_Att(nn.Module):
     def __init__(self, channels, t=16):
         super(Channel_Att, self).__init__()
@@ -21,7 +21,6 @@ class Channel_Att(nn.Module):
     def forward(self, x):
         residual = x
         x = self.bn2(x)
-        # 式2的计算，即Mc的计算
         weight_bn = self.bn2.weight.data.abs() / torch.sum(self.bn2.weight.data.abs())
         x = x.permute(0, 2, 3, 1).contiguous()
         x = torch.mul(weight_bn, x)
@@ -46,7 +45,7 @@ class Att(nn.Module):
 
 
 
-# 通道注意力机制
+# channel attention_v2
 class ChannelAttention(nn.Module):
     def __init__(self, in_planes, ratio=16):
         super(ChannelAttention, self).__init__()
@@ -66,7 +65,7 @@ class ChannelAttention(nn.Module):
         return self.sigmoid(out)
 
 
-# 空间注意力机制
+# spatial attention
 class SpatialAttention(nn.Module):
     def __init__(self, kernel_size=7):
         super(SpatialAttention, self).__init__()
