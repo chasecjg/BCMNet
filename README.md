@@ -9,7 +9,7 @@
 
 ## 1. Preface
 
-- This repository provides code for "_**Bidirectional Collaborative Mentoring Network for Marine Organism Detection and Beyond**_" TCSVT-2023. [paper]:https://ieeexplore.ieee.org/document/10093775
+- This repository provides code for "_**Bidirectional Collaborative Mentoring Network for Marine Organism Detection and Beyond**_" TCSVT-2023. [(paper)](https://ieeexplore.ieee.org/document/10093775)
 
 ## 2. Overview
 
